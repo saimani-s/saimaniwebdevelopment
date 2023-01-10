@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    background : #ecf4fb;
+}
+
+.center{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.img{
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
+    grid-gap: 30px;
+}
+.a p,h2{
+    font-weight: 600;
+    text-align: center;
+}
+.b p,h2{
+    font-weight: 600;
+    text-align: center;
+}
+.img img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.img img:hover{
+    transform: scale(0.8) rotate(-15deg);
+    border-radius: 20px;
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+
+.full-img{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.full-img img{
+    width: 90%;
+    max-width: 500px;
+}
+
+.full-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .d{
+    display:none;
+  }
+  }
+  
+  @media screen and (min-device-width: 481px) and (max-device-width:2548px) 
+  { 
+    .f{
+    display:none;
+  }
+}
+
+</style>
+<body>
+
+    <div class="d" style="text-align:center">
+        <h2>Responsive WebPage</h2> <br>
+        <p>DESKTOP VIEW</p>
+      </div>
+
+      <div class="f" style="text-align:center">
+        <h2>Responsive WebPage</h2> <br>
+        <p>Mobile WebPage</p> <br>
+      </div>
+
+      <div class="full-img" id="fullimgbox">
+        <img src="snow.jpg" id="fullimg">
+        <span onclick="closefullimg()">X</span>
+    </div>
+
+    <!-- <h1 class="center">Image Gallery</h1> -->
+    
+    <div class="img">
+        <img src="./i.jpg" onclick="openfullimg(this.src)">
+        <img src="./ii.jpg" onclick="openfullimg(this.src)">
+        <img src="./iii.jpg" onclick="openfullimg(this.src)">
+        <img src="./iv.jpg" onclick="openfullimg(this.src)">
+        <img src="./v.jpg" onclick="openfullimg(this.src)">
+        <img src="./vi.jpg" onclick="openfullimg(this.src)">
+        <img src="./vii.jpg" onclick="openfullimg(this.src)">
+        <img src="./viii.jpg" onclick="openfullimg(this.src)">
+    </div>
+
+<script>
+    let fullimgbox = document.getElementById("fullimgbox");
+    let fullimg = document.getElementById("fullimg");
+
+    function openfullimg(pic){
+        fullimgbox.style.display = "flex";
+        fullimg.src = pic;
+    }
+
+    function closefullimg(){
+        fullimgbox.style.display = "none";
+    }
+</script>    
+</body>
+</html>
